@@ -21,9 +21,3 @@ files{
     'html/fonts/*.ttf'
 }
 
-client_script '@esx_libraries/client/debug.lua'
-
-client_script "@Greek_ac/client/injections.lua"
-
-server_script '@optimizer/server/optimize.lua'
-server_script "@Protector/Server/injection.lua"
