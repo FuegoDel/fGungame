@@ -90,7 +90,7 @@ function OnKillUpdate(isUpdate,data,isStart)
 end
 
 function TransformVector3(vec)
-   return vector3(vec.x, vev.y, vec.z);
+   return vector3(vec.x, vec.y, vec.z);
 end
 
 function HandleGungameBlips()
@@ -155,7 +155,7 @@ end
 
 function RespawnAtRandomSpawnPoint(isStart)
 	local currentGunGame = GetCurrentGungame('Maps');
-	local SpawnPoint = TransformVector3(currentGunGame.GunGameRespawns[math.random(1,#currentGunGame.GunGameRespawns)]);
+	local SpawnPoint = currentGunGame.GunGameRespawns[math.random(1,#currentGunGame.GunGameRespawns)];
 
 
 	NetworkResurrectLocalPlayer(SpawnPoint.x, SpawnPoint.y, SpawnPoint.z, SpawnPoint.heading, true, false); 
@@ -186,13 +186,13 @@ function RespawnAtRandomSpawnPoint(isStart)
 		SetPlayerInvincible(PlayerPedId(),false);
 
 		RemoveAllPedWeapons(PlayerPedId());
-		local niggerballz = GetCurrentGungame('Loadouts');
+		local mainLoadout = GetCurrentGungame('Loadouts');
 		--print(ESX.DumpTable(nigger))
-		GiveWeaponToPed(PlayerPedId(),GetHashKey(niggerballz.loadout[myGunGameData.currentLevel].weapon),9999,false,true);
+		GiveWeaponToPed(PlayerPedId(),GetHashKey(mainLoadout.loadout[myGunGameData.currentLevel].weapon),9999,false,true);
 
-		SetPedAmmo(PlayerPedId(),GetHashKey(niggerballz.loadout[myGunGameData.currentLevel].weapon),9999);
+		SetPedAmmo(PlayerPedId(),GetHashKey(mainLoadout.loadout[myGunGameData.currentLevel].weapon),9999);
 
-		SetCurrentPedWeapon(PlayerPedId(),GetHashKey(niggerballz.loadout[myGunGameData.currentLevel].weapon),true);
+		SetCurrentPedWeapon(PlayerPedId(),GetHashKey(mainLoadout.loadout[myGunGameData.currentLevel].weapon),true);
 	end
 end
 
