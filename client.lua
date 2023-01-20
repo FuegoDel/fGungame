@@ -89,6 +89,9 @@ function OnKillUpdate(isUpdate,data,isStart)
 	end
 end
 
+function TransformVector3(vec)
+   return vector3(vec.x, vev.y, vec.z);
+end
 
 function HandleGungameBlips()
 	Citizen.CreateThread(function ()
