@@ -158,8 +158,8 @@ function RespawnAtRandomSpawnPoint(isStart)
 	local SpawnPoint = currentGunGame.GunGameRespawns[math.random(1,#currentGunGame.GunGameRespawns)];
 
 
-	NetworkResurrectLocalPlayer(SpawnPoint.x, SpawnPoint.y, SpawnPoint.z, SpawnPoint.heading, true, false); 
-	SetEntityHeading(PlayerPedId(),SpawnPoint.heading);
+	NetworkResurrectLocalPlayer(SpawnPoint.x, SpawnPoint.y, SpawnPoint.z, SpawnPoint.w, true, false); 
+	SetEntityHeading(PlayerPedId(),SpawnPoint.w);
 
 	if isStart then
 		FreezeEntityPosition(PlayerPedId(),true);
