@@ -35,7 +35,7 @@ Config.Maps = {
 		GunGameCenter = vector3(1432.97,1116.02,113.24),
 		GunGameRadius = 250.0,
 		GunGameRespawns = {
-			vector3(1432.62,1096.12,113.23)
+			vector4(1432.62,1096.12,113.23,150.0)
 		}
 	}
 }
